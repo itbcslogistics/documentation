@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Koreksi Kehadiran</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "primary-dark": "#0e46b9",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1c2433",
+                        "text-main": "#0d121b",
+                        "text-muted": "#64748b",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#2d3748",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar hide for cleaner mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-main dark:text-white antialiased h-screen flex flex-col overflow-hidden">
+<!-- Top App Bar -->
+<header class="bg-surface-light dark:bg-surface-dark shadow-sm z-10 shrink-0">
+<div class="flex items-center justify-between p-4 pb-3 pt-safe-top">
+<button class="text-text-main dark:text-white flex size-10 shrink-0 items-center justify-center rounded-full active:bg-gray-100 dark:active:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">arrow_back_ios_new</span>
+</button>
+<h2 class="text-text-main dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">
+                Koreksi Kehadiran
+            </h2>
+<button class="flex size-10 items-center justify-center rounded-full text-primary active:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined" style="font-size: 24px;">history</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto no-scrollbar p-4 pb-32">
+<div class="max-w-md mx-auto w-full space-y-6">
+<!-- Date Selection -->
+<section class="flex flex-col gap-2">
+<label class="text-text-main dark:text-gray-200 text-sm font-medium ml-1">Tanggal yang ingin dikoreksi</label>
+<button class="flex items-center justify-between w-full p-4 bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl shadow-sm active:ring-2 active:ring-primary/20 transition-all group">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined" style="font-size: 24px;">calendar_month</span>
+</div>
+<div class="flex flex-col items-start">
+<span class="text-xs text-text-muted font-medium">Hari ini</span>
+<span class="text-base font-semibold text-text-main dark:text-white group-active:text-primary">Senin, 24 Okt 2023</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted" style="font-size: 20px;">chevron_right</span>
+</button>
+</section>
+<!-- Correction Type (Segmented Button) -->
+<section class="bg-surface-light dark:bg-surface-dark p-1.5 rounded-xl border border-border-light dark:border-border-dark shadow-sm">
+<div class="flex relative">
+<label class="flex-1 relative z-10 cursor-pointer">
+<input checked="" class="peer sr-only" name="correction_type" type="radio" value="in"/>
+<div class="flex items-center justify-center py-2.5 text-sm font-medium rounded-lg transition-all duration-200 text-text-muted hover:text-text-main peer-checked:bg-primary peer-checked:text-white peer-checked:shadow-md">
+                            Jam Masuk
+                        </div>
+</label>
+<label class="flex-1 relative z-10 cursor-pointer">
+<input class="peer sr-only" name="correction_type" type="radio" value="out"/>
+<div class="flex items-center justify-center py-2.5 text-sm font-medium rounded-lg transition-all duration-200 text-text-muted hover:text-text-main peer-checked:bg-primary peer-checked:text-white peer-checked:shadow-md">
+                            Jam Keluar
+                        </div>
+</label>
+</div>
+</section>
+<!-- Time Input Section -->
+<section class="bg-surface-light dark:bg-surface-dark rounded-2xl p-5 border border-border-light dark:border-border-dark shadow-sm space-y-4">
+<h3 class="text-sm font-semibold text-text-main dark:text-white mb-2">Detail Waktu</h3>
+<div class="flex gap-4">
+<!-- Recorded Time (Read Only) -->
+<div class="flex-1 flex flex-col gap-1.5 opacity-60 pointer-events-none">
+<span class="text-xs font-medium text-text-muted">Tercatat</span>
+<div class="h-14 bg-gray-100 dark:bg-gray-800 rounded-xl flex items-center px-4 border border-transparent">
+<span class="text-lg font-medium text-text-main dark:text-gray-300 line-through decoration-red-500/50">09:15</span>
+</div>
+</div>
+<!-- Actual Time (Input) -->
+<div class="flex-1 flex flex-col gap-1.5">
+<span class="text-xs font-medium text-primary">Seharusnya</span>
+<div class="h-14 bg-white dark:bg-surface-dark rounded-xl flex items-center justify-between px-4 border-2 border-primary ring-4 ring-primary/5 relative cursor-pointer group">
+<input class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" type="time" value="08:00"/>
+<span class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">08:00</span>
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">edit</span>
+</div>
+</div>
+</div>
+<p class="text-xs text-text-muted leading-relaxed">
+<span class="material-symbols-outlined align-middle mr-1 text-orange-500" style="font-size: 14px;">info</span>
+                    Sistem mendeteksi keterlambatan 1 jam 15 menit dari jadwal shift pagi.
+                </p>
+</section>
+<!-- Reason Input -->
+<section class="flex flex-col gap-2">
+<label class="text-text-main dark:text-gray-200 text-sm font-medium ml-1">Alasan Koreksi</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark text-text-main dark:text-white text-base rounded-xl focus:ring-primary focus:border-primary block p-4 pr-10 shadow-sm">
+<option>Lupa Absen (Clock In)</option>
+<option>Lupa Absen (Clock Out)</option>
+<option>Kesalahan Sistem / Error</option>
+<option>Dinas Luar</option>
+<option>Lainnya</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-text-muted">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+<textarea class="w-full bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark text-text-main dark:text-white text-sm rounded-xl focus:ring-primary focus:border-primary block p-4 shadow-sm mt-2 resize-none" placeholder="Tuliskan detail alasan tambahan..." rows="3"></textarea>
+</section>
+<!-- Evidence Upload -->
+<section class="flex flex-col gap-2">
+<label class="text-text-main dark:text-gray-200 text-sm font-medium ml-1">Bukti Pendukung <span class="text-text-muted font-normal text-xs">(Opsional)</span></label>
+<div class="w-full flex justify-center rounded-xl border-2 border-dashed border-border-light dark:border-border-dark px-6 py-8 bg-surface-light dark:bg-surface-dark/50 hover:bg-gray-50 dark:hover:bg-surface-dark transition-colors cursor-pointer group relative overflow-hidden">
+<input class="absolute inset-0 opacity-0 cursor-pointer z-10" type="file"/>
+<div class="text-center">
+<div class="mx-auto flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-size: 24px;">cloud_upload</span>
+</div>
+<div class="flex text-sm text-text-muted">
+<span class="relative cursor-pointer rounded-md font-medium text-primary focus-within:outline-none focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 hover:text-primary-dark">
+                                Upload file
+                            </span>
+<p class="pl-1">atau ambil foto</p>
+</div>
+<p class="text-xs text-text-muted mt-1">PNG, JPG, PDF up to 2MB</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Sticky Footer -->
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-border-light dark:border-border-dark p-4 pb-8 sticky bottom-0 z-20 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<div class="max-w-md mx-auto w-full">
+<button class="flex w-full items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3.5 text-base font-bold text-white shadow-lg shadow-primary/30 hover:bg-primary-dark hover:shadow-primary/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-all active:scale-[0.98]">
+<span>Ajukan Koreksi</span>
+<span class="material-symbols-outlined" style="font-size: 20px;">send</span>
+</button>
+</div>
+</footer>
+</body></html>
