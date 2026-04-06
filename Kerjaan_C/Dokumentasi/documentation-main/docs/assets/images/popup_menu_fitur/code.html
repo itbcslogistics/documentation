@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Popup Menu Fitur</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="relative flex h-screen w-full flex-col overflow-hidden bg-background-light dark:bg-background-dark">
+<div aria-hidden="true" class="flex-1 flex flex-col p-4 space-y-4 opacity-30 pointer-events-none select-none">
+<div class="flex justify-between items-center pt-8 pb-2">
+<div>
+<h1 class="text-2xl font-bold text-slate-900 dark:text-white">Halo, Rizky 👋</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Siap bekerja hari ini?</p>
+</div>
+<div class="h-10 w-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden" data-alt="User profile placeholder" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuALOPZ459dX-fU3-vouYLzeyUnKIAZ8RHX1L7p3dxAvHjnq1hRmnf3hH5afjV1ax3nEjiU4O_hHNq_ERSeiPlgXINoMER8bnsoV1LAnhasc54k7aqTm0HQuMSFuip-crQgZhDxZyXwsDxAS5J0TzL2DL2pV_fGE1JWKXTO46tDdR1cmpkraGRQJyrpetmRTzbeTaE2ziJQ96t10r9KhRfZizEcnTprsgW-jyB1eYB0rkG3r9WDnQZZleGuX4u9qZ4mt0xMwyFvtCYk'); background-size: cover;"></div>
+</div>
+<div class="bg-primary/10 rounded-2xl p-6 border border-primary/20">
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">Senin, 14 Okt 2023</span>
+<span class="bg-primary text-white text-xs px-2 py-1 rounded-full">Shift Pagi</span>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<div class="text-3xl font-bold text-slate-900 dark:text-white">08:00</div>
+<div class="text-xs text-slate-500">Jam Masuk</div>
+</div>
+<div class="text-right">
+<div class="text-3xl font-bold text-slate-400">--:--</div>
+<div class="text-xs text-slate-500">Jam Keluar</div>
+</div>
+</div>
+</div>
+<div class="space-y-3">
+<h3 class="font-bold text-slate-900 dark:text-white">Aktivitas Terakhir</h3>
+<div class="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+<div class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined">login</span>
+</div>
+<div>
+<div class="font-medium text-slate-900 dark:text-white">Clock In</div>
+<div class="text-xs text-slate-500">07:55 AM • Tepat Waktu</div>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 rounded-xl shadow-sm">
+<div class="h-10 w-10 rounded-full bg-red-100 flex items-center justify-center text-red-600">
+<span class="material-symbols-outlined">logout</span>
+</div>
+<div>
+<div class="font-medium text-slate-900 dark:text-white">Clock Out</div>
+<div class="text-xs text-slate-500">Kemarin, 17:05 PM</div>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-[#e7ebf3] dark:border-slate-800 bg-white dark:bg-[#101622] px-4 pb-6 pt-2 opacity-30 pointer-events-none">
+<div class="flex gap-2">
+<div class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400">
+<span class="material-symbols-outlined">home</span>
+<p class="text-xs font-medium">Beranda</p>
+</div>
+<div class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400">
+<span class="material-symbols-outlined">history</span>
+<p class="text-xs font-medium">Riwayat</p>
+</div>
+<div class="flex flex-1 flex-col items-center justify-end gap-1 text-primary">
+<span class="material-symbols-outlined font-variation-fill">grid_view</span>
+<p class="text-xs font-medium">Menu</p>
+</div>
+<div class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400">
+<span class="material-symbols-outlined">assignment</span>
+<p class="text-xs font-medium">Izin</p>
+</div>
+<div class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400">
+<span class="material-symbols-outlined">person</span>
+<p class="text-xs font-medium">Akun</p>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-[#141414]/60 backdrop-blur-sm p-4 animate-fade-in">
+<div class="w-full max-w-[360px] flex flex-col bg-white dark:bg-[#1e293b] rounded-2xl shadow-2xl overflow-hidden relative mb-20 sm:mb-0 transition-all transform scale-100">
+<div class="pt-6 pb-2 px-6 flex justify-between items-center">
+<h2 class="text-[#0d121b] dark:text-white tracking-tight text-xl font-bold leading-tight">Menu Lainnya</h2>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+</button>
+</div>
+<div class="p-4">
+<div class="grid grid-cols-2 gap-3">
+<button class="group flex flex-col items-center gap-3 p-4 bg-slate-50 dark:bg-slate-800 hover:bg-primary/5 dark:hover:bg-primary/20 active:scale-95 transition-all rounded-xl border border-transparent hover:border-primary/30 text-center">
+<div class="h-12 w-12 rounded-full bg-primary/10 group-hover:bg-primary text-primary group-hover:text-white flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[24px]">receipt_long</span>
+</div>
+<div>
+<p class="text-[#0d121b] dark:text-white text-sm font-semibold leading-normal">Slip Gaji</p>
+<p class="text-[#4c669a] dark:text-slate-400 text-xs font-normal leading-normal mt-0.5">Lihat detail gaji</p>
+</div>
+</button>
+<button class="group flex flex-col items-center gap-3 p-4 bg-slate-50 dark:bg-slate-800 hover:bg-primary/5 dark:hover:bg-primary/20 active:scale-95 transition-all rounded-xl border border-transparent hover:border-primary/30 text-center">
+<div class="h-12 w-12 rounded-full bg-primary/10 group-hover:bg-primary text-primary group-hover:text-white flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[24px]">edit_calendar</span>
+</div>
+<div>
+<p class="text-[#0d121b] dark:text-white text-sm font-semibold leading-normal">Koreksi Kehadiran</p>
+<p class="text-[#4c669a] dark:text-slate-400 text-xs font-normal leading-normal mt-0.5">Ajukan revisi</p>
+</div>
+</button>
+<button class="group flex flex-col items-center gap-3 p-4 bg-slate-50 dark:bg-slate-800 hover:bg-primary/5 dark:hover:bg-primary/20 active:scale-95 transition-all rounded-xl border border-transparent hover:border-primary/30 text-center">
+<div class="h-12 w-12 rounded-full bg-primary/10 group-hover:bg-primary text-primary group-hover:text-white flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[24px]">summarize</span>
+</div>
+<div>
+<p class="text-[#0d121b] dark:text-white text-sm font-semibold leading-normal">Rekap Absensi</p>
+<p class="text-[#4c669a] dark:text-slate-400 text-xs font-normal leading-normal mt-0.5">Riwayat kehadiran</p>
+</div>
+</button>
+<button class="group flex flex-col items-center gap-3 p-4 bg-slate-50 dark:bg-slate-800 hover:bg-primary/5 dark:hover:bg-primary/20 active:scale-95 transition-all rounded-xl border border-transparent hover:border-primary/30 text-center">
+<div class="h-12 w-12 rounded-full bg-primary/10 group-hover:bg-primary text-primary group-hover:text-white flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[24px]">more_time</span>
+</div>
+<div>
+<p class="text-[#0d121b] dark:text-white text-sm font-semibold leading-normal">Tugas Lembur</p>
+<p class="text-[#4c669a] dark:text-slate-400 text-xs font-normal leading-normal mt-0.5">Form lembur</p>
+</div>
+</button>
+<button class="group col-span-2 flex flex-row items-center justify-start gap-4 p-4 bg-slate-50 dark:bg-slate-800 hover:bg-primary/5 dark:hover:bg-primary/20 active:scale-95 transition-all rounded-xl border border-transparent hover:border-primary/30 text-left">
+<div class="h-12 w-12 rounded-full bg-primary/10 group-hover:bg-primary text-primary group-hover:text-white flex items-center justify-center transition-colors shrink-0">
+<span class="material-symbols-outlined text-[24px]">event_available</span>
+</div>
+<div>
+<p class="text-[#0d121b] dark:text-white text-sm font-semibold leading-normal">Tugas Masuk Hari Libur</p>
+<p class="text-[#4c669a] dark:text-slate-400 text-xs font-normal leading-normal mt-0.5">Pengajuan kerja di hari libur</p>
+</div>
+</button>
+</div>
+</div>
+<div class="flex px-6 pb-6 pt-2 justify-center w-full">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-4 bg-transparent hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors">
+<span class="text-sm font-bold leading-normal tracking-[0.015em]">Tutup</span>
+</button>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full">
+<div class="h-8 w-full bg-gradient-to-b from-transparent to-black/20"></div>
+<div class="flex gap-2 border-t border-[#e7ebf3]/10 bg-[#f8f9fc] dark:bg-[#101622] px-4 pb-6 pt-2 shadow-2xl">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 group hover:text-primary transition-colors" href="#">
+<div class="flex h-6 items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">home</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Beranda</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 group hover:text-primary transition-colors" href="#">
+<div class="flex h-6 items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">history</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Riwayat</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary animate-pulse" href="#">
+<div class="flex h-6 items-center justify-center">
+<span class="material-symbols-outlined text-[24px] font-variation-fill">grid_view</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Menu</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 group hover:text-primary transition-colors" href="#">
+<div class="flex h-6 items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">assignment</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Izin</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 group hover:text-primary transition-colors" href="#">
+<div class="flex h-6 items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">person</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Akun</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

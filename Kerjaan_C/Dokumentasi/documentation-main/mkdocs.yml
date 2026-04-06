@@ -1,0 +1,51 @@
+site_name: Panduan Pengguna Presensi
+site_description: Dokumentasi resmi penggunaan Aplikasi Presensi Karyawan
+site_author: Antigravity Support
+
+theme:
+  name: material
+  logo: assets/images/bcsgroup_logo.png
+  favicon: assets/images/bcsgroup_logo.png
+  language: id
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Beralih ke mode gelap
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Beralih ke mode terang
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+nav:
+  - Beranda: index.md
+  - 1. Memulai (Getting Started): 1-getting-started.md
+  - 2. Absensi Harian: 2-daily-attendance.md
+  - 3. Profil & Laporan: 3-profile-reports.md
+  - 4. Pengajuan: 4-requests-approvals.md
+  - 5. Troubleshooting (FAQ): 5-faq-troubleshoot.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  - stylesheets/extra.css
